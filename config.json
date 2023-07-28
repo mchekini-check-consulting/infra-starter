@@ -1,0 +1,32 @@
+{
+  "environment": "int",
+  "buckets": [
+    "fiche-de-paie-check-consulting",
+    "factures-check-consulting"
+  ],
+  "hostedZoneName": "check-consulting.net",
+  "applications" : [
+    {
+      "name" : "collab",
+      "dnsPrefix" : "collab",
+      "port" : 80
+    },
+    {
+      "name" : "admin",
+      "dnsPrefix" : "admin",
+      "port" : 81
+    }
+  ],
+  "recordsSubdomains": [
+    "collab",
+    "admin"
+  ],
+  "ec2Instances": [
+    {
+      "subnet" : "subnet-cafb2786"
+    },
+    {
+      "subnet" : "subnet-ffdfaa85"
+    }
+  ]
+}
