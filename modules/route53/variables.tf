@@ -3,12 +3,6 @@ variable "hostedZone" {
   default = null
 }
 
-variable "subdomains" {
-  type = list(string)
-  default = []
-}
-
-
 variable "alb-dns-name" {
   type = string
   default = null
@@ -24,4 +18,23 @@ variable "applications" {
     name = string
     dnsPrefix = string
   }))
+}
+
+
+variable "ec2-instances" {
+  type = list(object({
+    subnet : string
+    type: string
+    volumeSize: number
+  }))
+  default = null
+}
+
+variable "ec2-ips" {
+  type = list(string)
+  default = null
+}
+
+variable "environment" {
+  type = string
 }

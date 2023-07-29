@@ -24,11 +24,15 @@ resource "aws_security_group" "db-security-group" {
 resource "aws_instance" "ec2-instance" {
   count           = length(var.ec2-instances)
   ami             = "ami-024e6efaf93d85776"
-  instance_type   = "t3.micro"
+  instance_type   = var.ec2-instances[count.index].type
   subnet_id       = var.ec2-instances[count.index].subnet
-  security_groups = [aws_security_group.db-security-group.id]
+  security_groups = [aws_security_group.db-security-group.name]
   user_data       = templatefile("./scripts/init.tftpl", { instanceNumber = count.index })
   key_name        = var.ec2_keyName
+
+  root_block_device {
+    volume_size = var.ec2-instances[count.index].volumeSize
+  }
 
   tags = {
     Name = "test-vm-${count.index}"

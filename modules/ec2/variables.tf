@@ -6,6 +6,8 @@ variable "ec2_keyName" {
 variable "ec2-instances" {
   type = list(object({
     subnet : string
+    type: string
+    volumeSize: number
   }))
   default = null
 }

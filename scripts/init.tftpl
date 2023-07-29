@@ -1,11 +1,9 @@
 #!/bin/bash
 sudo su
 apt-get update
-apt-get install -y nginx
 apt-get install -y docker.io
-
-echo "<h1 style='text-align:center;color: red;'>Welcome to Nginx : Instance ${instanceNumber} </h1>" > /var/www/html/index.html
-
-service nginx start
-
-docker run --name nginx -p 81:80 -d nginx
+apt-get install -y git
+apt-get install -y docker-compose
+apt-get install -y openjdk-17-jre-headless
+docker network create staff-manager
+chmod 777 -R /opt
