@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
     bucket = "staff-manager-tfstates"
-    workspace_key_prefix = "qua"
-    key = "qua-staff-manager.tfstate"
+    workspace_key_prefix = "int"
+    key = "int-staff-manager.tfstate"
     region = "us-east-2"
   }
   required_providers {

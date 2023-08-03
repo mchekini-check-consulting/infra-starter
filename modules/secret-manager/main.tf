@@ -5,7 +5,7 @@ resource "random_password" "password" {
 }
 
 resource "aws_secretsmanager_secret" "db-master-password" {
-  name = "sm-${var.environment}-db-creds"
+  name = "sm-${var.environment}-db-credentials"
 }
 
 resource "aws_secretsmanager_secret_version" "sversion" {
@@ -48,7 +48,7 @@ resource "aws_key_pair" "instance" {
 
 # Creates and stores ssh key used creating an EC2 instance
 resource "aws_secretsmanager_secret" "ec2-keypair" {
-  name = "ec2-key-pair-${var.environment}"
+  name = "sm-${var.environment}-ec2-key-pair"
 }
 
 

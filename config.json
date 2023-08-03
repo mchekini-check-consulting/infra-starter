@@ -1,5 +1,5 @@
 {
-  "environment": "qua",
+  "environment": "int",
   "buckets": [
     "fiche-de-paie-check-consulting",
     "factures-check-consulting",
@@ -9,12 +9,12 @@
   "applications": [
     {
       "name": "collab",
-      "dnsPrefix": "qua.collab",
+      "dnsPrefix": "int.collab",
       "port": 80
     },
     {
       "name": "admin",
-      "dnsPrefix": "qua.admin",
+      "dnsPrefix": "int.admin",
       "port": 81
     }
   ],
