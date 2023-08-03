@@ -1,10 +1,10 @@
-data "aws_vpc" "default" {
-  default = true
-}
+#data "aws_vpc" "default" {
+#  default = true
+#}
 
 resource "aws_security_group" "db-security-group" {
-  vpc_id      = data.aws_vpc.default.id
-  name        = "postgres-security-group"
+  vpc_id      = var.vpc_id
+  name        = "${var.environment}-postgres-security-group"
   description = "Allow all inbound for Postgres"
   ingress {
     from_port   = 5432
@@ -15,8 +15,8 @@ resource "aws_security_group" "db-security-group" {
 }
 
 resource "aws_db_instance" "staff-manager-db-instance" {
-  identifier             = "staff-manager-db"
-  db_name                = "staff_manager_db"
+  identifier             = "${var.environment}-sm-db"
+  db_name                = "${var.environment}_sm_db"
   instance_class         = "db.m5d.large"
   allocated_storage      = 5
   engine                 = "postgres"

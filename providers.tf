@@ -1,4 +1,10 @@
 terraform {
+  backend "s3" {
+    bucket = "staff-manager-tfstates"
+    workspace_key_prefix = "qua"
+    key = "qua-staff-manager.tfstate"
+    region = "us-east-2"
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"

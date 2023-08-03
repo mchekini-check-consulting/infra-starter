@@ -38,3 +38,8 @@ variable "ec2-ips" {
 variable "environment" {
   type = string
 }
+
+variable "zone_id" {
+  type = string
+  default = "Z02992983P6JBHBJ5UT37"
+}

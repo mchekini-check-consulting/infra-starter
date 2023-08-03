@@ -2,7 +2,8 @@
   "environment": "qua",
   "buckets": [
     "fiche-de-paie-check-consulting",
-    "factures-check-consulting"
+    "factures-check-consulting",
+    "justificatifs-check-consulting"
   ],
   "hostedZoneName": "check-consulting.net",
   "applications": [

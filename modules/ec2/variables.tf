@@ -24,3 +24,23 @@ variable "hostedZone" {
   type = string
   default = null
 }
+
+variable "environment" {
+  type = string
+  default = null
+}
+
+variable "instance-profile-name" {
+  type = string
+  default = null
+}
+
+variable "vpc_id" {
+  type = string
+  default = "vpc-4cc9de24"
+}
+
+variable "certificate_arn" {
+  type = string
+  default = null
+}

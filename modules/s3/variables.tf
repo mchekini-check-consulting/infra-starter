@@ -3,7 +3,7 @@ variable "bucket_names" {
   default = []
 }
 
-variable "env" {
+variable "environment" {
   type = string
   default = null
 }
